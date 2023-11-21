@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="shortcut icon" href="./src/images/socks-solid.svg" type="far fa-socks"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" > 
+    <title>Meias Sport</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <a href="#" class="logo">
+            <img class="logo-imagem" src="./src/images/logo.png" alt="logo rdj">
+        </a>
+        <nav class="navegacao">
+            <ul class="menu">
+                <!-- <li><a href="#">Home</a></li> -->
+                <li class="item">
+                    <a href="#produtos">Produtos</a>
+                </li>
+                <li class="item">
+                    <a href="#quem-somos">Sobre</a>
+                </li>
+                <li class="item">
+                    <a href="./registro.html">Contato</a>
+                </li>
+                <li class="item">
+                    <a href="https://www.bruckstore.com.br/meias-atacado" target="_blank">Loja Virtual</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container" id="produtos">
+        <section class="paineis">
+            <h1 class="titulo">Nossos Produtos</h1>
+            <!-- <img class="imagem-produto" src="./src/images/meias3.png" alt="produto meia1"> -->
+            <div class="imagem-produto img1 mostrar"></div>
+            <div class="imagem-produto img2 "></div>
+            <div class="imagem-produto img3 "></div>
+            <div class="imagem-produto img4 "></div>
+            <div class="imagem-produto img5 "></div>
+            <div class="imagem-produto img6 "></div>
+            <div class="imagem-produto img7 "></div>
+            <div class="imagem-produto img8 "></div>
+            <div class="imagem-produto img9 "></div>
+            <div class="imagem-produto img10 "></div>
+            <a href="#" id="btn-voltar" class="seta btn-voltar">voltar</a>
+            <a href="#" id="btn-avancar" class="seta btn-avancar">avançar</a>
+        </section>
+        <section class="loja-virtual">
+            <h1 class="titulo">Veja mais produtos:</h1>
+            <button class="btn-loja">Loja Virtual</button>
+        </section>
+        <section class="quem-somos" id="quem-somos">
+            <div class="conteudo">
+                <div class="informacoes">
+                    <h2 class="titulo">Quem Somos</h2>
+                    <p class="texto">Fundada no ano de 2008, a RDJ Meias produz meias Sport Adulto em vários modelos para homens e mulheres. O mercado popular é o seu grande negócio, sendo uma das maiores fornecedoras da Feirinha da Madrugada localizada no bairro do Brás em São Paulo.</p>
+                </div>
+                <!-- <div class="conteudo-logo">
+                    <span class="logo-sobre">Meias</span><br>
+                    <span class="logo-sobre1">SPORT</span>
+                </div> -->
+                <img class="imagem" src="./src/images/logo.png" alt="maquina empresa">
+            </div>
+        </section>
+    </main>
+    <footer class="rodape" id="contato">
+        <nav class="navegacao">
+            <a href="#" class="logo">
+                <img class="logo-imagem" src="./src/images/logo1.png" alt="logo site">
+            </a>
+            <img class="pagamento" src="./src/images/formas_pagamento.png" alt="">
+
+            <div class="redes-sociais">
+                <a href="https://api.whatsapp.com/send?phone=5511980166052" target="_blank" class="rede-social">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <a href="mailto:vendas@rdjmeias.com.br?=subject='Olá...'" class="rede-social">
+                    <i class="far fa-envelope"></i>
+                </a>
+            </div>
+        </nav>
+        <p class="copyright">&copy; Todos os direitos reservados</p>
+    </footer>
+    <!-- <script src="./src/js/script.js"></script> -->
+<script>
+    
+        const painelImagens = document.querySelectorAll('.imagem-produto');
+        const setaVoltar = document.querySelector('a#btn-voltar');
+        const setaAvancar = document.querySelector('a#btn-avancar');
+        let imagemAtual = 0;
+    
+        function esconderImagens() {
+            painelImagens.forEach(imagem => {
+                imagem.classList.remove('mostrar')
+            });
+        }
+    
+        function mostrarImagem() {
+            painelImagens[imagemAtual].classList.add('mostrar');
+        }
+    
+        setaAvancar.addEventListener('click', function () {
+            const totalDeImagens = painelImagens.length - 1
+            if (imagemAtual === totalDeImagens) {
+                imagemAtual = 0
+            } else {
+                imagemAtual ++
+            }
+            esconderImagens();
+            mostrarImagem();
+        })
+    
+        setaVoltar.addEventListener('click', function() {
+            if (imagemAtual === 0) {
+                imagemAtual = painelImagens.length;
+            }
+    
+            imagemAtual --;
+            esconderImagens();
+            mostrarImagem();
+        })
+    
+    
+    
+        const btnLoja = document.querySelector('button.btn-loja')
+    
+        btnLoja.addEventListener('click', ()=>{
+            window.open('https://www.bruckstore.com.br/meias-atacado')
+        })
+</script>
+
+</body>
+</html>

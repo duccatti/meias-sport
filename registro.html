@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="shortcut icon" href="./src/images/socks-solid.svg" type="far fa-socks"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" > 
+    <title>Meias Sport</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <a href="#" class="logo">
+            <img class="logo-imagem" src="./src/images/logo.png" alt="logo rdj">
+        </a>
+        <nav class="navegacao">
+            <ul class="menu">
+                <!-- <li><a href="#">Home</a></li> -->
+                <li class="item">
+                    <a href="./index.html">Home</a>
+            </ul>
+        </nav>
+    </header>
+    <main class="login">
+        <h1>Envie seus dados caso esteja interessado <br>em adquirir nossos produtos</h1>
+        <form class="card" name="form1" method="post" action="registro.jsp">
+            <div class="cabecalho-card register">
+                <h2>Registro</h2>
+            </div>
+            <div class="conteudo-card">
+                <div class="area-conteudo-card">
+                    <label id="nome" for="nome">Nome</label>
+                    <input type="text" class="nome" autocomplete="off">
+                </div>
+                <div class="area-conteudo-card">
+                    <label id="cpf" for="cpf">CPF ou CNPJ</label>
+                    <input type="number" class="cpf" autocomplete="off">
+                </div>
+                <div class="area-conteudo-card">
+                    <label id="cep" for="cep">CEP</label>
+                    <input type="number" class="cep" autocomplete="off">
+                </div>
+                <div class="area-conteudo-card">
+                    <label id="qtd-meias" for="qtd-meias">Qtd. de Meias</label>
+                    <input type="number" class="qtd-meias" autocomplete="off">
+                </div>
+                <div class="area-conteudo-card">
+                    <label id="modelo-meias" for="modelo-meias">Modelo de Meias</label>
+                    <input type="text" class="modelo-meias" autocomplete="off" pattern="[a-z]">
+                </div>
+            </div>
+            <div class="rodape-card">
+                <!-- <a href=""> -->
+                    <input type="button" value="Registrar" class="submit" onclick="verificar()">
+                <!-- </a> -->
+            </div>
+        </form>
+    </main>
+    <script src="./src/js/validacao.js"></script>
+</body>
+</html>
